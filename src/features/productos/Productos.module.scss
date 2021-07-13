@@ -1,69 +1,72 @@
-.tabla {
+.contenedor{
   position: relative;
+}
 
-  table {
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    border-collapse: collapse;
+.center{
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
 
-    th {
+.tabla {
+  border-collapse: collapse;
+
+  th {
+    padding: 4px 8px;
+    height: 24px;
+    background-color: lightgray;
+    border: solid gray;
+
+    &:not(:first-child):not(:last-child) {
+      border-width: 2px 0;
+    }
+
+    &:first-child {
+      border-width: 2px 0 2px 2px;
+    }
+
+    &:last-child {
+      border-width: 2px 2px 2px 0;
+    }
+  }
+
+  tr {
+    td {
       padding: 4px 8px;
       height: 24px;
-      background-color: lightgray;
-      border: solid gray;
-
-      &:not(:first-child):not(:last-child) {
-        border-width: 2px 0;
-      }
 
       &:first-child {
-        border-width: 2px 0 2px 2px;
+        border: solid gray;
+        border-width: 0 0 0 2px;
       }
 
       &:last-child {
-        border-width: 2px 2px 2px 0;
+        border: solid gray;
+        border-width: 0 2px 0 0;
       }
     }
 
-    tr {
+    &:hover {
       td {
-        padding: 4px 8px;
-        height: 24px;
+        background-color: lightcyan;
+      }
+    }
+
+    &:last-child {
+      td {
+        border: solid gray;
+
+        &:not(:first-child):not(:last-child) {
+          border-width: 0 0 2px 0;
+        }
 
         &:first-child {
-          border: solid gray;
-          border-width: 0 0 0 2px;
+          border-width: 0 0 2px 2px;
         }
 
         &:last-child {
-          border: solid gray;
-          border-width: 0 2px 0 0;
-        }
-      }
-
-      &:hover {
-        td {
-          background-color: lightcyan;
-        }
-      }
-
-      &:last-child {
-        td {
-          border: solid gray;
-
-          &:not(:first-child):not(:last-child) {
-            border-width: 0 0 2px 0;
-          }
-
-          &:first-child {
-            border-width: 0 0 2px 2px;
-          }
-
-          &:last-child {
-            border-width: 0 2px 2px 0;
-          }
+          border-width: 0 2px 2px 0;
         }
       }
     }
